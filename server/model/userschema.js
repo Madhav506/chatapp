@@ -8,8 +8,8 @@ var mongoSchema =   mongoose.Schema;
 var userSchema  = new mongoSchema({
             'firstname'  : {
                         type : String, 
-                        required: [false, "cannot be empty."],
-                        match:'/a-z,A-Z,0-9/'
+                         required: [false, "cannot be empty."],
+                        // match:'/a-z,A-Z,0-9/'
 
                     },
             'lastname':  {
@@ -18,9 +18,9 @@ var userSchema  = new mongoSchema({
                     },
             'username':  {
                         type: String, 
-                        //required: true,
-                        unique: true,
-                        required: [true, "cannot be empty."]
+                        //required: false,
+                        // unique: true,
+                        required: [false, "cannot be empty."]
                     },
             
             'mobilenumber': {
@@ -30,14 +30,14 @@ var userSchema  = new mongoSchema({
             'email':  {
                         type: String, 
                         required: [true, "cannot be empty."],
-                        unique: true,
-                        match:'//'
+                        // unique: true,
+                        // match:'//'
 
                         
                     },
             'password':   {
                             type: String, 
-                            required: [true, "cannot be empty."]
+                         required: [true, "cannot be empty."]
                         }
 });
 // create model if not exists.
