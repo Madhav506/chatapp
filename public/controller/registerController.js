@@ -8,7 +8,7 @@
 });*/
 // var chatApp = angular.module('loginController', []);
 
-chatApp.controller('registerController', function ($scope, $http) {
+chatApp.controller('registerController', function ($scope, $http,$state) {
     //console.log('register');
     $scope.user = {
         'firstname': '',
@@ -27,17 +27,21 @@ chatApp.controller('registerController', function ($scope, $http) {
             data: $scope.user
         }).then(function(response) {
             if (response.status == 200) {
-                console.log("successfully registered in ");
+                //console.log("successfully registered in ");
                 $scope.message = "Registration sucessfull"
+                $state.go('login');
             }
             else if (response.status == 404) {
-                console.log('registration invalid,because you have registered already')
+              
                 $scope.message = "Registration unsucessfull"
             }
+        },function (response) {
+            //console.log('registration invalid,because you have registered already');
+            console.log(response);
+            $scope.message = response.data.message;
+            $scope.message = "Enter valid credentials"
+
         })
-    },function (response) {
-        console.log('registration invalid,because you have registered already');
-        $scope.message = response.data.message;
     }
     
 

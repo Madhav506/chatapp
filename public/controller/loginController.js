@@ -7,7 +7,7 @@
     
 });*/
 // var chatApp = angular.module('loginController', []);
-chatApp.controller('loginController',function($scope,$http){
+chatApp.controller('loginController',function($scope,$http,$state){
     console.log('login');
     $scope.user={
         'email': '',
@@ -24,6 +24,10 @@ chatApp.controller('loginController',function($scope,$http){
         if(response.status==200){
             console.log("successfully logged in ");
             $scope.message="Login Successful";
+            $state.go('home');
+            var token=response.data.token;
+            localStorage.setItem("token",token);
+            
         }
         else if(response.status==404){
             
@@ -31,11 +35,12 @@ chatApp.controller('loginController',function($scope,$http){
             console.log(response);
             $scope.message="Login Unsuccessful,invalid credentials";
         }
+    },function (response) {
+        console.log(response);
+        $scope.message = response.data.message;
+      $scope.message="Login Unsuccessful,invalid credentials";
     })
  
-},function (response) {
-    console.log('login invalid');
-    $scope.message = response.data.message;
 }
 
 });

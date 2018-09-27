@@ -1,0 +1,95 @@
+ /********************************Registration form****************************/
+ h1{
+    color:rgb(131, 37, 37);
+    font-size:30px;
+    text-align: center;
+    text-decoration-color: rgb(96, 51, 107);
+    /* margin:0 auto 50px auto; */
+    margin:20px 420px 30px 400px;
+
+  }
+  .registration form {
+    margin:10px 50px 50px 400px;
+    width: 450px;
+    height:580px;
+    background-color: rgb(31, 96, 126);
+    padding: 50px 20px 50px 30px;
+    border-radius: 50px 50px 50px 50px;
+    color: white;
+    text-transform: uppercase; 
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Century Gothic";
+  
+  }
+  
+  .registration input, .registration select {
+    width: 350px;
+    height: 30px;
+    margin: 18px 10px 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+
+  }
+  
+  .registration input:focus {
+    background-color: rgb(212, 177, 110);
+  }
+  
+  .registration form label {
+    margin: 5px 5px 5px 5px;
+  }
+  
+  a {
+    outline: none;
+  }
+  
+  .register_button {
+    width: 100px;
+    height: 10px;
+    background-color: rgb(144, 231, 173);
+    border-radius: 20px;
+    margin: 10px 50px 100px 150px;
+    padding:10px 10px 20px 10px;
+    text-align: center;
+    cursor: pointer;
+    clear: both;
+    font-size: 1.0em;
+  }
+  /*select any element with this class name*/
+  .register_button span {
+    font-weight: bolder;
+    font-size: 16px;
+    font-family: "Impact";
+    line-height: 10px;
+  }
+  .register_button span a {
+   text-decoration: none;
+    color: rgb(88, 2, 2);
+  }
+  .register_button span a:hover {
+    color: rgb(64, 30, 190);
+  }
+  /*select any span*/
+  span.sample {
+    margin-right: 120px;
+    font-size: 9px;
+    color: rgb(104, 30, 8);
+    height: 10px;
+  }
+  /*select any p*/
+  p.sample {
+    margin: 0px 14px 0px 10px;
+    font-size: 9px;
+    color: orange;
+    height: 6px;
+    padding: 10px 10px 8px 10px;
+    text-align: right;
+    text-transform: none;
+  }
+  
+  h5{
+    padding-top:0px 0 0 0;
+  font-size:1.2em;
+  color:hsl(7, 92%, 51%);
+}

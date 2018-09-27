@@ -12,24 +12,25 @@
 
          
 
-<form >
-                <h5>{{message}}</h5>
-
-
+<form name="form2">
+         <h5>{{message}}</h5>
 
 <div class="box">
 <h1 style ="font-family:'Times New Roman', Times, serif"><b>CHATAPP</b></h1>
 <br>
 <div>
 <label><b>Email-Id:</b> </label>
-<input type="email" name="email" placeholder="Enter your email "ng-model="user.email" required class="email"  /></div>
+<input type="email" name="email" placeholder="Enter your email "ng-model="user.email"  class="email"maxlength="100"  ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" required  /></div>
+<span style="color:rgb(42, 14, 201)" ng-show="form2.email.$dirty && form2.email.$invalid" class="ng-hide">   
+                Please Enter Valid  Email.!  
+                </span>
 <div>
         <label><b>Password:<b></label>
   
 <input type="password" name="email" placeholder="Enter your password " ng-model="user.password" required  class="password"  /></div>
 
   
-<a href="#"><div class="button1" ng-click='login()' value="login">Login</div></a>
+<a href="#"><div class="button1" ng-click='login()' value="login" style="float: right;">Login</div></a>
 
 <a href="#!/register"><div class="button2" >SignUp</div></a> 
 

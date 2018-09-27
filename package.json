@@ -18,6 +18,7 @@
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.3.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.2.16"
+    "mongoose": "^5.2.16",
+    "socket.io": "^2.1.1"
   }
 }

@@ -11,13 +11,18 @@ chatApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/login.html',
             controller:'loginController'
         })
-        .state('/register', {
+        .state('register', {
             url:'/register',
             templateUrl: 'templates/register.html',
             controller:'registerController'
 
         })
-        
+        .state('home',{
+           // url:'/home',
+            templateUrl: 'templates/home.html',
+            controller:'homeController'
+
+        })
 
     
 });

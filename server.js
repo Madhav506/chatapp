@@ -32,6 +32,7 @@ var config = require('./server/config/config.js');
 var router = require('./server/controller/userController');
 app.use('/', router);//mounts the function at specified path
 
+// var io = require('socket.io')(server);
 
 
 

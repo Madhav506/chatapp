@@ -1,6 +1,6 @@
 body{
     font-family: 'Open Sans', sans-serif;
-    background:#74c8dd;
+    background:#88def0;
     margin: 0 auto 0 auto;  
     width:100%; 
     text-align:center;
@@ -11,22 +11,28 @@ body{
     font-size:12px;
     text-decoration: none;
     color:#921f1f;
+
+  }
+  b{
+    margin:0px 5px 0px 10px;
   }
   
   h1{
-      padding-top:0px 0 0 0;
+      padding:0px 0 0 0;
     font-size:2.5em;
     color:#881212;
     margin-left: 50px;
     margin-top: -30px;
-    margin-bottom: -10px;
+    margin-bottom: 10px;
+    margin-right: 40px;
+
     text-align: center;
   }
   
   .box{
     background:white;
     width:480px;
-    height:200px;
+    height:450px;
 
     border-radius:10px 10px 10px 10px;
     margin: 0 auto 0 auto;
@@ -43,7 +49,7 @@ body{
     padding: 10px;
     width:250px;
     font-size:1em;
-    margin-bottom: 10px;
+    margin: 10px 25px 25px 30px;
 
   }
   
@@ -56,21 +62,24 @@ body{
     padding: 10px;
     width:250px;
     font-size:1em;
+    margin: 10px 10px 20px 10px;
+
   }
   
   .button1{
     background:#2ecc71;
     width:125px;
-    padding-top:5px;
-    padding-bottom:5px;
+    /* padding-top:5px; */
+    /* padding-bottom:5px 5px 5px 5px; */
+    padding: 15px 15px 15px 15px;
+
     color:white;
     border-radius:40px;
     border: #27ae60 1px solid;
     
-    margin-top:20px;
-    margin-bottom:20px;
+    margin:20px 20px 20px 20px;
+
     float:left;
-    margin-left:150px;
     font-weight:800;
     font-size:0.8em;
   }
@@ -82,15 +91,16 @@ body{
   .button2{
     float:left;
     background:#3498db;
-    width:125px;  padding-top:5px;
-    padding-bottom:5px;
+    width:125px; 
+    height:20px;
+     /* padding-top:15px; */
+    /* padding-bottom:15px; */
+    padding: 15px 15px 30px 15px;
     color:white;
     border-radius:40px;
     border: #7f59da 1px solid;
+    margin:20px 20px 20px 20px;
     
-    margin-top:20px;
-    margin-bottom:20px;
-    margin-left:20px;
     font-weight:800;
     font-size:0.8em;
   }
@@ -98,97 +108,4 @@ body{
   .button2:hover{ 
   background:rgb(127, 74, 189); 
   }
-  /********************************Registration form****************************/
-  h1{
-    color:rgb(131, 37, 37);
-    font-size:30px;
-    text-align: center;
-    text-decoration-color: rgb(96, 51, 107);
-    margin:0 auto 0 auto;
-
-  }
-  .registration form {
-    margin:10px 50px 50px 400px;
-    width: 400px;
-    height:500px;
-    background-color: rgb(31, 96, 126);
-    padding: 50px 20px 50px 30px;
-    border-radius: 50px 50px 50px 50px;
-    color: white;
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: bold;
-    font-family: "Century Gothic";
-  
-  }
-  
-  .registration input, .registration select {
-    width: 350px;
-    height: 25px;
-    margin: 18px 10px 10px 10px;
-    border-radius: 10px;
-    font-weight: bold;
-
-  }
-  
-  .registration input:focus {
-    background-color: rgb(212, 177, 110);
-  }
-  
-  .registration form label {
-    margin: 5px 5px 5px 5px;
-  }
-  
-  a {
-    outline: none;
-  }
-  
-  .register_button {
-    width: 100px;
-    height: 10px;
-    background-color: rgb(144, 231, 173);
-    border-radius: 20px;
-    margin: 10px 50px 100px 150px;
-    padding:10px 10px 10px 10px;
-    text-align: center;
-    cursor: pointer;
-    clear: both;
-    font-size: 1.0em;
-  }
-  /*select any element with this class name*/
-  .register_button span {
-    font-weight: bolder;
-    font-size: 16px;
-    font-family: "Impact";
-    line-height: 10px;
-  }
-  .register_button span a {
-   text-decoration: none;
-    color: rgb(88, 2, 2);
-  }
-  .register_button span a:hover {
-    color: rgb(64, 30, 190);
-  }
-  /*select any span*/
-  span.sample {
-    margin-right: 120px;
-    font-size: 9px;
-    color: rgb(5, 3, 136);
-    height: 10px;
-  }
-  /*select any p*/
-  p.sample {
-    margin: 0px 14px 0px 10px;
-    font-size: 9px;
-    color: orange;
-    height: 6px;
-    padding: 0px 0px 8px 0px;
-    text-align: right;
-    text-transform: none;
-  }
-  
-  h5{
-    padding-top:0px 0 0 0;
-  font-size:1.0em;
-  color:#e61717;
-}
+ 
