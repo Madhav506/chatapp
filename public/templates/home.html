@@ -1,16 +1,28 @@
-
+<div>
     <header>
         <h2>ChatApp</h2>
-      </header>
-      
-      <section>
+    </header>
+
+    <section>
         <nav>
-         <button>FriendsList</button>
-        </nav>
+            FriendsList
+        
+        <!-- <button> <div ng-click='home()' value="FriendsList" name="FriendsList">FriendsList</div></button> -->
+
+        <div>
+            <div id="userid">
+              <ul>  <li ng-repeat="key in friendsarrlist " >
+                 
+                    {{key}}  </li></ul>
+            </div>
+        </div>
+
+    </nav>
+
+
         <footer>
             <button style="float:right">send</button>
-          </footer>
-          
-      </section>
-      
-    
+        </footer>
+
+    </section>
+</div>

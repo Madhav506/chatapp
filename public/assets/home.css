@@ -27,7 +27,13 @@ nav {
      
 
 }
-
+ul {
+    list-style:disc;
+    padding-left:40px;
+  }
+li{
+    padding:10px 0px 0px 0px;
+}
 
 /* Clear floats after the columns */
 /*after selector inserts something after the content of each selected element*/
@@ -54,10 +60,10 @@ body {
     overflow:hidden
     }
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens
-@media (max-width: 600px) {
-    nav, article {
-        width: 100%;
-        height: auto;
+    #userid{
+        float:left;
     }
+h2{
+    margin-left:-600px
+    
 }

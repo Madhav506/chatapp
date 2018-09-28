@@ -1,31 +1,50 @@
 
-localStorage.getItem("token",token);
+chatApp.controller('homeController', function ($scope, $http) {
+    console.log(localStorage.getItem("userid"))
 
-chatApp.controller('homeController',function($scope,$http){
+    if (localStorage) {
 
-    $scope.user={
-        
+        var userid = localStorage.getItem("userid", userid);
+        var token = localStorage.getItem("token", token);
     }
-    console.log($scope.user);
-    $scope.login = function(){
-    $http({
-        method: 'POST',
-        url: '/home',
-        data: $scope.user
-    }).then(function(response){        
-        if(response.status==200){
+
+    var friendsarrlist = [];
+console.log('/users/' + userid + '/userlist');
+
+        $http({
+            method: 'GET',
+            url: '/users/' + userid + '/userlist',
+            headers: {
+                'token': token
+            }
+        }).then(function (response) {
+
+            console.log(response.data.message[0]);
+
+            for (var i = 0; i < (response.data.message).length; i++) {
+
+                friendsarrlist.push(response.data.message[i].username);
+
+            }
+            console.log(friendsarrlist);
+
+            $scope.friendsarrlist = friendsarrlist;
+        
+        
+        
+        })
+
             
-        }
-        else if(response.status==404){
-            
-            
-        }
-    },function (response) {
+
 
         
-       
-    })
- 
-}
 
 });
+
+
+
+
+
+
+
+

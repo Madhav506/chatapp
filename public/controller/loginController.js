@@ -25,8 +25,12 @@ chatApp.controller('loginController',function($scope,$http,$state){
             console.log("successfully logged in ");
             $scope.message="Login Successful";
             $state.go('home');
+            
             var token=response.data.token;
+            var userid=response.data.message.userid;
+            
             localStorage.setItem("token",token);
+            localStorage.setItem("userid",userid);
             
         }
         else if(response.status==404){
@@ -38,7 +42,7 @@ chatApp.controller('loginController',function($scope,$http,$state){
     },function (response) {
         console.log(response);
         $scope.message = response.data.message;
-      $scope.message="Login Unsuccessful,invalid credentials";
+      $scope.message="Login Unsuccessful,enter valid credentials";
     })
  
 }

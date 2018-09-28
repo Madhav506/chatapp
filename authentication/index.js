@@ -16,7 +16,7 @@ var auth=function(req,res,next){
         if(err)
         {
             console.log(err);
-            return res.status(401).send(respo);
+            return res.status(404).send(respo);
         }
         else{
             console.log(decoded);

@@ -39,7 +39,7 @@ chatApp.controller('registerController', function ($scope, $http,$state) {
             //console.log('registration invalid,because you have registered already');
             console.log(response);
             $scope.message = response.data.message;
-            $scope.message = "Enter valid credentials"
+            $scope.message = "Please Enter valid credentials"
 
         })
     }

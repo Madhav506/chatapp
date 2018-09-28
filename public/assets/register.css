@@ -29,20 +29,21 @@
     margin: 18px 10px 10px 15px;
     border-radius: 10px;
     font-weight: bold;
+    padding:0px 0px 0px 10px;
 
   }
   
   .registration input:focus {
-    background-color: rgb(212, 177, 110);
+    background-color: rgb(240, 237, 231);
   }
   
   .registration form label {
     margin: 5px 5px 5px 5px;
   }
   
-  a {
+ /* a {
     outline: none;
-  }
+  }*/
   
   .register_button {
     width: 100px;
@@ -58,7 +59,7 @@
   }
   /*select any element with this class name*/
   .register_button span {
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 16px;
     font-family: "Impact";
     line-height: 10px;
@@ -85,11 +86,11 @@
     height: 6px;
     padding: 10px 10px 8px 10px;
     text-align: right;
-    text-transform: none;
+    /* text-transform: none; */
   }
   
   h5{
     padding-top:0px 0 0 0;
   font-size:1.2em;
-  color:hsl(7, 92%, 51%);
+  color:blue;
 }
