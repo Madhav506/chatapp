@@ -25,12 +25,14 @@ chatApp.controller('loginController',function($scope,$http,$state){
             console.log("successfully logged in ");
             $scope.message="Login Successful";
             $state.go('home');
-            
+          
             var token=response.data.token;
             var userid=response.data.message.userid;
             
             localStorage.setItem("token",token);
             localStorage.setItem("userid",userid);
+
+
             
         }
         else if(response.status==404){

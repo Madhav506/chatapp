@@ -1,6 +1,18 @@
 
-chatApp.controller('homeController', function ($scope, $http) {
+chatApp.controller('homeController', function ($scope, $http,SocketService) {
+    
     console.log(localStorage.getItem("userid"))
+
+   SocketService.emit('tobackend',"client is connected");
+   console.log("client is connected");
+
+
+   SocketService.on('toclient',function(msg){
+    console.log(msg);
+    
+
+   })
+
 
     if (localStorage) {
 
@@ -27,13 +39,14 @@ console.log('/users/' + userid + '/userlist');
 
             }
             console.log(friendsarrlist);
-
+            
             $scope.friendsarrlist = friendsarrlist;
+            
         
         
         
         })
-
+    
             
 
 

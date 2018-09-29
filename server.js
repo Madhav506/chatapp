@@ -2,6 +2,7 @@
 var express = require("express");//including the libraries of express
 /*assigning those all express lib to a variable app*/
 const app = express();
+var socket=require('socket.io');
 
 /**body-parser is which allows express to read the body and then parse that into a Json object that we can understand. */
 //bodyparser used to get access to post the data
@@ -22,22 +23,28 @@ app.use(bodyParser.urlencoded({ "extended": false }));
    
  app.use(expressValidator());
 
-//var jwt = require('jsonwebtoken');
-//var config = require('./server/config/config.js');
-
 var router = require('./server/controller/userController');
 app.use('/', router);//mounts the function at specified path
 
-
-
-
-
-app.listen(8000);//only works on port 8000
-console.log("Listening to PORT 8000");
+//app.listen(8000);//only works on port 8000
 
 //Routing To Public Folder For Any Static Context
 app.use(express.static('./public'));
 
+var server=app.listen(8000);
+console.log("Listening to PORT 8000");
 
+
+//socket setup
+var io= socket(server);
+
+io.on('connection', function(client) {
+    console.log("you are connected");
+    
+    client.on('tobackend', function(data) {
+                 client.emit('toclient',data)
+    
+    })
+});
 
 

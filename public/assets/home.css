@@ -1,3 +1,6 @@
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -39,8 +42,8 @@ li{
 /*after selector inserts something after the content of each selected element*/
 section:after {
     content: "";
-    display: table;
     clear: both;
+    /* No floating elements allowed on either the left or the right side */
   margin:100px 50px 150px 50px
        
 }
@@ -66,4 +69,11 @@ body {
 h2{
     margin-left:-600px
     
+}
+textarea{
+    margin:-8px -5px 10px -25px;
+    width:92%;
+}
+h4{
+    margin:-2opx --320px;
 }
