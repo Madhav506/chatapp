@@ -1,33 +1,57 @@
-<div>
-    <header>
-        <h2>ChatApp</h2>
-        <!-- <h4><button style="float:right">Logout</button></h4> -->
-    </header>
+<!-- <div id="attop">
+    <div id="header">
+        <h1 class="h1" align="center">ChatAPP</h1>
+        <div id="logout"><button id=logoutButton type="button" ng-click ="logout()">Logout</button></div>
+    </div>
+    <div id=Area>
+        <div id="leftarea">
+            
+            <div id="contacts" >
+                    <h4 style="float:left">FriendsList</h4>
+                <li ng-repeat = "key in friendsarrlist">
+                <a href="#"></a>
+                    {{key}}<br></a>
+            </li></div>
+        </div>
+        <div id="rightarea">
+            <div id="messagebox" >
+                <p ng-repeat = "chat in chatlist">{{chat.username}} : {{chat.message}}</p>
+            </div>
+            <div id="sendbox">
+                <div id="textarea">
+                    <textarea id="text" rows="4" cols="50" placeholder="Enter your message" ng-model = "message" required></textarea><button id="sendbtn" type="button" placeholder="send" ng-click = "add()">send</button>
+                </div>
 
-    <section>
-        <nav>
-            FriendsList
-        
-        <!-- <button> <div ng-click='home()' value="FriendsList" name="FriendsList">FriendsList</div></button> -->
-
-        <div>
-            <div id="userid">
-              <ul>  <li ng-repeat="key in friendsarrlist " >
-                 
-                    {{key}}  </li></ul>
             </div>
         </div>
-
-    </nav>
-
-
-        <footer>
-            <textarea placeholder="message here...">
+    </div>
+</div> -->
+<div id="header">
+        <h1 class="h2" align="center">ChatApp</h1>
+        <div id="logout"><button id="logoutButton" type="button" ng-click="logout()">Logout</button></div>
+    </div>
+    <div id="Area">
+        <!-- <div id="leftarea"> -->
             
-        </textarea>
-        <button style="float:right">send</button>
-        </footer>
+            <div id="contacts" align="left">
+                    <h4>FriendsList</h4>
+               
+        </div>
 
-    </section>
-    
+        </div>
+        <!-- </div> -->
+        <div id="rightarea">
+            <div id="messagebox">
+                
+            </div>
+
+            
+                    <textarea id="text" rows="40" cols="600" placeholder="Enter your message" ng-model="message" required="" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required"></textarea>
+                    <button id="sendbtn" type="button" placeholder="send" ng-click="add()">send</button>
+                
+
+            </div>
+        </div>
+    </div>
+
 </div>

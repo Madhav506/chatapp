@@ -28,9 +28,11 @@ chatApp.controller('loginController',function($scope,$http,$state){
           
             var token=response.data.token;
             var userid=response.data.message.userid;
+            var username=response.data.message.username;
             
             localStorage.setItem("token",token);
             localStorage.setItem("userid",userid);
+            localStorage.setItem("username",username);
 
 
             

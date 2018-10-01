@@ -42,7 +42,9 @@ router.post("/login", [
 
 
     userModel.find({ "email": email, "password": encryption(password) }, function (err, data) {
+    console.log("data from login" );
 
+       
         try {
 
             if (err) {
@@ -61,9 +63,10 @@ router.post("/login", [
                     }, secret, {
                             expiresIn: '20d'
                         });
-
+                        console.log(data)
                     var userid = data[0]._id;
-                    var response = { "message": "login successful", "userid": userid };
+                    var username = data[0].firstname;
+                    var response = { "message": "login successful", "username":username,"userid": userid };
                     // create a token
                     //config.secret  returns the correct configuration
                     var token = jwt.sign({ id: userModel._id }, config.secret, {
@@ -240,6 +243,34 @@ router.get('/users/:id/userlist', auth, function (req, res) {
     });
 
 });
+router.get('/chatlist',auth,function (req, res) {
+    var jwt = require('jsonwebtoken');
+    var chatmod = require('../model/messageSchema');
+    var db = new chatmod();
+    var respo = {};
+
+    chatmod.find({}, function (err, data) {
+
+        if (err) {
+
+            respo = {
+                'Success': "false",
+                'message': "Error in fetching data "
+            }
+        } else {
+            respo = {
+                'Success': 'true',
+                'message': data
+            }
+        }
+
+       // console.log(respo)
+        return res.status(200).send(respo);
+    });
+});
+
+
+
 
 
 app.use('/', router);

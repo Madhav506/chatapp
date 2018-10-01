@@ -3,7 +3,7 @@ var express = require("express");//including the libraries of express
 /*assigning those all express lib to a variable app*/
 const app = express();
 var socket=require('socket.io');
-
+var users=require('./server/controller/chatAdd')
 /**body-parser is which allows express to read the body and then parse that into a Json object that we can understand. */
 //bodyparser used to get access to post the data
 var bodyParser = require("body-parser");
@@ -38,13 +38,23 @@ console.log("Listening to PORT 8000");
 //socket setup
 var io= socket(server);
 
-io.on('connection', function(client) {
-    console.log("you are connected");
-    
-    client.on('tobackend', function(data) {
-                 client.emit('toclient',data)
-    
+io.on('connection', function(client){
+
+    console.log('A user entered');
+
+    client.on('disconnect', function(){
+        console.log("socket disconnected ")
+    })
+
+
+    client.on('chatRoomBackend', function(data) {
+               
+       users.chatAddHistory(data.userid, data.username, data.message, data.dateTime);
+        
+        io.emit('chatroomClient', data);
+        //client.broadcast.emit('chatroomClient', data);
     })
 });
+
 
 
