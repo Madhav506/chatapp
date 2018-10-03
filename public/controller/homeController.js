@@ -24,6 +24,8 @@ chatApp.controller('homeController', function ($scope, $http,$state,SocketServic
     }
 
     $scope.userid1=userid;
+    $scope.username=username;
+    
     
     var friendsarrlist = [];
 console.log('/users/' + userid + '/userlist');
@@ -63,7 +65,13 @@ console.log('/users/' + userid + '/userlist');
             
 
 $scope.chatlist = [];
-    $scope.chatlistnew = [];
+    // $scope.chatlistnew = [];
+
+
+   $scope.show= function() {
+        document.getElementById("show").innerHTML = "<iframe src=\"./peer.html\" height=\"1200\" width=\"1300\" ></iframe>";
+
+    }
 
 
     $scope.add = function(){
@@ -74,7 +82,7 @@ $scope.chatlist = [];
         }
         $scope.message=null;
     }
-
+   
     $http({
 
         method: 'GET',

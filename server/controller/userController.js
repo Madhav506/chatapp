@@ -270,6 +270,35 @@ router.get('/chatlist',auth,function (req, res) {
 });
 
 
+router.get('/specific',function(req,res){
+    var chatmod = require('../model/messageSchema');
+    var db = new chatmod();
+    var userid = req.params.id;
+    var respo={};
+   chatmod.find({userid}, function (err, data) 
+{
+
+    if (err) {
+
+        respo = {
+           
+            'message': "Error in fetching data "
+        }
+    } else {
+        respo = {
+            
+            'message': data
+        }
+    }
+
+   // console.log(respo)
+    return res.status(200).send(respo);
+
+})
+})
+
+
+
 
 
 

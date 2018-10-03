@@ -1,10 +1,10 @@
 
   <div>
     <div>
-      <h1> Registration Form</h1>
+      <h1 style="padding:0px 1px 10px 10px"> Registration Form</h1>
     </div>
 
-    <h5>{{message}}</h5>
+    
 
     <div class="registration">
       <form name="form1">
@@ -47,14 +47,17 @@
 
         <div class="register_button" ng-click='register()' value="register">
           <span><a href>REGISTER</a></span>
+          </div>
+          
           <!-- <button ng-click='register()'>Register</button> -->
 
           <!-- <a href="#"><div class="button1"  value="login">Login</div></a> -->
 
          <!-- <div class="register_button1" ng-click="display1()" value="display1"> -->
-          <br><br><br> <div> <span><a href="#">Signin</a></span></div>
+       <div id="signin">   <br><br><br> <div> <span>Already registered then..<a href="#">Signin</a></span></div>
 
-        
+        &nbsp;
+       <div><h5 align="right">{{message}}</h5></div>
         </div>
       </form>
 

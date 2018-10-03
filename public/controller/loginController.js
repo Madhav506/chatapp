@@ -46,7 +46,7 @@ chatApp.controller('loginController',function($scope,$http,$state){
     },function (response) {
         console.log(response);
         $scope.message = response.data.message;
-      $scope.message="Login Unsuccessful,enter valid credentials";
+      $scope.message="Invalid Credentials";
     })
  
 }

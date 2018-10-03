@@ -1,6 +1,6 @@
 body{
-    font-family: 'Open Sans', sans-serif;
-    background:#f2f7f8;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background:#f0f0f1;
     margin: 0 auto 0 auto;  
     width:100%; 
     text-align:center;
@@ -10,17 +10,17 @@ body{
   p{
     font-size:12px;
     text-decoration: none;
-    color:#a11818;
+    color:#f0ecec;
 
   }
   b{
-    margin:0px 5px 0px 10px;
+    margin:0px -8px 0px 10px;
   }
   
-  h1{
+  #h1{
       padding:0px 0 0 0;
     font-size:2.5em;
-    color:#881212;
+    color:#f8f0f0;
     margin-left: 50px;
     margin-top: -30px;
     margin-bottom: 10px;
@@ -30,26 +30,27 @@ body{
   }
   
   .box{
-    background:white;
+    background:#3B5998;
     width:480px;
-    height:450px;
+    height:350px;
 
-    border-radius:10px 10px 10px 10px;
+    /* border-radius:10px 10px 10px 10px; */
     margin: 0 auto 0 auto;
     padding:50px 50px 30px 50px;
     border: #85720a 1px solid; 
     margin-top: 120px;
-    box-shadow: goldenrod;
+    /* box-shadow: goldenrod; */
     
   }
   .email{
     border-radius:4px;
     background:#ecf1ee;
     border: #ccc 5px solid;
-    padding: 10px;
+    padding: 20px;
     width:250px;
-    font-size:1em;
-    margin: 10px 25px 25px 30px;
+    height: 5px;
+    font-size:1.2em;
+    margin: 10px -30px 20px 10px;
 
   }
   
@@ -59,53 +60,57 @@ body{
     border-radius:4px;
     background:#ecf0f1;
     border: #ccc 5px solid;
-    padding: 10px;
+    padding: 20px;
     width:250px;
-    font-size:1em;
-    margin: 10px 10px 20px 10px;
+    height: 5px;
+    font-size:1.2em;
+    margin: 10px -5px 20px 10px;
 
   }
   
   .button1{
-    background:#2ecc71;
+    background:#f1f7f3;
     width:125px;
     /* padding-top:5px; */
     /* padding-bottom:5px 5px 5px 5px; */
     padding: 15px 15px 15px 15px;
 
-    color:white;
-    border-radius:40px;
-    border: #27ae60 1px solid;
+    color:#3B5998;
+    /* border-radius:40px; */
+    border: #e5ece8 1px solid;
     
     margin:20px 20px 20px 20px;
 
     float:left;
     font-weight:800;
-    font-size:0.8em;
+    font-size:1.0em;
   }
   
   .button1:hover{
-    background:rgb(121, 49, 85); 
+    background:rgb(231, 167, 199); 
   }
   
   .button2{
     float:left;
-    background:#3498db;
+    background:#f2f5f7;
     width:125px; 
-    height:20px;
+    height:4px;
      /* padding-top:15px; */
     /* padding-bottom:15px; */
     padding: 15px 15px 30px 15px;
-    color:white;
-    border-radius:40px;
+    color:#3B5998;
+    /* border-radius:40px; */
     border: #7f59da 1px solid;
     margin:20px 20px 20px 20px;
     
     font-weight:800;
-    font-size:0.8em;
+    font-size:1.0em;
   }
   
   .button2:hover{ 
-  background:rgb(127, 74, 189); 
+  background:rgb(212, 194, 231); 
   }
  
+#h2{
+  padding: 60px;
+}
