@@ -20,7 +20,7 @@
                          </div>
                         </div>
 
-        <div class="boxed1">
+        <!-- <div class="boxed1"> -->
                
                                 
                          <div class = "list">
@@ -28,10 +28,10 @@
                                 
                              <ul style="padding:-2px 20px 10px 40px">
                                 <li  align = "left" type = "none" ng-repeat = "key in friendsarrlist">
-                                  <font color="black"> <button id="frnds" type="submit" value="submit" ng-click="show()">
+                                  <font color="black"> <button id="frnds" type="submit" value="submit" ng-click='show(key.username,key.userid)'>
                                    
                                     
-                                    {{key}}</button>
+                                    {{key.username}}</button>
 
 
                                     
@@ -41,11 +41,15 @@
                            </ul>
                        </div>
 
-          <div class = "res" style="float:right">
+
+
+          <div class = "res" ng-if = "temp == 1" style="float:right">
+
 
              <!-- <div id="show"></div> -->
 
                             <ul align = "left" ng-repeat = "x in chatlist track by $index">
+
                                  <br><p  id="left" ng-if = "username != x.username">{{x.username}} : 
                                 <span>{{x.message}}</span><br><br>
                                 <span id = "time" style="font-size: 0.7em" > {{x.dateTime | date: 'short'}}</span></p>
@@ -55,7 +59,25 @@
                                       <span>{{x.message}}</span><br><br>
                                       <span id = "time" style="font-size: 0.7em" >{{x.dateTime | date: 'short'}}</span></p>
                                    
-                                    </div>
+          </div>
+
+
+
+          <div class = "res" ng-if = "temp == 0" style="float:right">
+            <!-- <h4>{{receiver}}</h4> -->
+   
+                                <ul align = "left" ng-repeat = "x in peerchat track by $index">
+   
+                                    <br><p  id="left" ng-if = "sendername != x.sendername">{{x.sendername}} : 
+                                   <span>{{x.message}}</span><br><br>
+                                   <span id = "time" style="font-size: 0.7em" > {{x.dateTime | date: 'short'}}</span></p>
+   
+   
+                                   <br> <p id="right1" ng-if = "receivername == x.receivername">{{x.username}} : 
+                                         <span>{{x.message}}</span><br><br>
+                                         <span id = "time" style="font-size: 0.7em" >{{x.dateTime | date: 'short'}}</span></p>
+                                       
+             </div>
 
 
                                 <div class = "textarea">
@@ -63,10 +85,10 @@
                                             </textarea>
                                 </div>
 
-                                <div class = "send">
-                                    <button type = "submit" value = "Submit" ng-click = "add()" style="padding: 4px;color:whitesmoke;background-color: #3B5998; font-size:20px;font-family: 'Tangerine', serif"> Send</button>
+                                <div class = "send" ng-if="temp==0">
+                                    <button type = "submit" value = "Submit" ng-click = "send()" style="padding: 14px;margin:8px -1420px 10px 10px;color:whitesmoke;background-color: #3B5998; font-size:20px;font-family: 'Tangerine', serif"> Send</button>
                                 </div>
-                            </div>   
+                            <!-- </div>    -->
                        
                         <!-- </div> -->
                         

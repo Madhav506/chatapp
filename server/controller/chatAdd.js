@@ -31,3 +31,43 @@ exports.chatAddHistory = function (userid, username, message, dateTime) {
 
 }
 
+ exports.peerchatHistory=function(senderid,sendername,receiverid,receivername,message,dateTime)
+    {
+
+        console.log(senderid)
+        console.log(sendername);
+        console.log(receiverid);
+        console.log(receivername);
+        console.log(message)
+        
+        var peermod = require('../model/peerSchema');
+        var response={};
+       var db=new peermod();
+
+        db.senderid=senderid;
+        db.sendername=sendername;
+        db.receiverid=receiverid;
+        db.receivername=receivername;
+        db.message=message;
+        db.dateTime=dateTime
+        
+        db.save(function(err){
+            if(err)
+      
+            {
+                response={
+                   
+                    "message":"error occured data",
+                  
+                }
+            }
+            else{
+                response={
+                  
+                    "message":"message saved into the database"
+                }
+            };
+        
+            console.log(response);
+        })
+    }

@@ -270,12 +270,22 @@ router.get('/chatlist',auth,function (req, res) {
 });
 
 
-router.get('/specific',function(req,res){
-    var chatmod = require('../model/messageSchema');
-    var db = new chatmod();
-    var userid = req.params.id;
+
+router.get('/peerchat',auth,function(req,res){
+  
+    var jwt = require('jsonwebtoken');
+    var peermod = require('../model/peerSchema');
+    var db = new peermod();
+
+    var senderid = req.params.senderid;
+    var receiverid=req.params.receiverid;
+
+    // console.log("data in peerlist",senderid);
+    // console.log("data in peerlist",receiverid);
+
     var respo={};
-   chatmod.find({userid}, function (err, data) 
+
+   peermod.find({$or:[{'senderid':senderid,'receiverid':receiverid},{'receiverid':receiverid,'senderid':senderid}]}, function (err, data) 
 {
 
     if (err) {
