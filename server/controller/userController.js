@@ -271,7 +271,7 @@ router.get('/chatlist',auth,function (req, res) {
 
 
 
-router.get('/peerchat',auth,function(req,res){
+router.get('/peerchat/:senderid/:receiverid',auth,function(req,res){
   
     var jwt = require('jsonwebtoken');
     var peermod = require('../model/peerSchema');
@@ -279,6 +279,8 @@ router.get('/peerchat',auth,function(req,res){
 
     var senderid = req.params.senderid;
     var receiverid=req.params.receiverid;
+
+
 
     // console.log("data in peerlist",senderid);
     // console.log("data in peerlist",receiverid);
@@ -298,7 +300,10 @@ router.get('/peerchat',auth,function(req,res){
         respo = {
             
             'message': data
+
         }
+
+        console.log(respo);
     }
 
    // console.log(respo)

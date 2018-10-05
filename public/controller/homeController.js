@@ -1,8 +1,6 @@
 
 chatApp.controller('homeController', function ($scope, $http,$state,SocketService) {
     
-   
-    
     var cuserid=localStorage.getItem('userid');
     var cusername = localStorage.getItem('username');
     var receiverid=localStorage.getItem('receiverid');
@@ -12,6 +10,9 @@ chatApp.controller('homeController', function ($scope, $http,$state,SocketServic
     console.log(cusername);
     console.log(receiverid);
     console.log(receivername);
+
+    $scope.mem='chat1';
+    $scope.chatlist1=[];
 
 
 
@@ -84,24 +85,43 @@ chatApp.controller('homeController', function ($scope, $http,$state,SocketServic
             
 
 $scope.chatlist = [];
-    // $scope.chatlistnew = [];
-
-
+   
    $scope.show= function(name,id) {
-                $scope.temp=0;
+        $scope.temp=0;
              console.log(name);console.log(id);
-        //  $scope.message=name;
+         $scope.mess=name;
         // $state.go('/peer');
       localStorage.setItem("receivername",name);
       localStorage.setItem("receiverid",id);
+      $scope.mem='chat';
+
+      $http({
+        method: 'GET',
+        url: '/peerchat/'+ cuserid+'/'+ receiverid,
+        headers: {
+            'token': token
+        }
+    }).then(function (response) {
+
+        console.log(response.data.message);
+        
+
+        $scope.chatlist1=response.data.message;
+    
+    })
 
 
     }
 
     $scope.add = function(){
 
-        if($scope.message.length !== 0){
+        if($scope.message.length !== 0 && $scope.mem=='chat1'){
             SocketService.emit('chatRoomBackend', {'userid': userid, 'username': username, 'message': $scope.message, 'dateTime': new Date()});
+        }
+
+        else {
+            SocketService.emit('chatRoomBackend',{'senderid':cuserid,'sendername':cusername,'receiverid':receiverid,'receivername':receivername,'message':$scope.message,'dateTime':new Date()})
+    //    console.log('chatRoomBackend',{'senderid':cuserid,'sendername':cusername,'receiverid':receiverid,'receivername':receivername,'message':$scope.message,'dateTime':new Date()})
         }
         $scope.message=null;
     }
@@ -127,11 +147,7 @@ $scope.chatlist = [];
     $scope.userName=username;
     $scope.cuserid=userid;
 
-    SocketService.on('chatroomClient', function(msg) {
-
-        console.log(msg);
-        $scope.chatlist.push(msg)
-    });
+   
 
     // $scope.send=function(){
     //     console.log("in send")
@@ -140,44 +156,40 @@ $scope.chatlist = [];
     //     $scope.message=null;
        
     //       }
+         
+       
+       
+        //    SocketService.on(cuserid, function(msg) {
+       
+        //        console.log(msg);
+        //        if(cuserid==receiverid){
+        //        $scope.chatlist.push(msg)
+        //    }
+        //    $scope.cuserid=cuserid;
+        //    });
+      
+       
+        SocketService.on('chatroomClient', function(msg) {
 
-
-    $scope.send=function(){
-        SocketService.emit('peerchatbackend',{'senderid':cuserid,'sendername':cusername,'receiverid':receiverid,'receivername':receivername})
-        $scope.chatlist.push({'senderid': cuserid, 'sendername': cusername,'receiverid':receiverid,'receivername':receivername });
-        $scope.message=null;
-       
-          }
-          console.log('/peerchat/'+ receiverid + 'cuserid');
-       
-               $http({
-                   method: 'GET',
-                   url: '/peerchat/'+receiverid + cuserid,
-                   headers: {
-                       'token': token
-                   }
-               }).then(function (response) {
-       
-                   console.log(response.data.message[0]);
-                   
-       
-                   $scope.chatlist=response.data.message;
+            var tempo=0;
+            for(key in msg){
+                tempo++;
+            }
+            if(tempo==4)
+            {
+    
+            console.log(msg);
+            $scope.chatlist.push(msg)
+            }
+            else{
+             $scope.chatlist1.push(msg)
+            console.log(msg);
+            $scope.cuserid=cuserid;
                
-               })
+            }
+        });
+  
        
-       
-           SocketService.on(cuserid, function(msg) {
-       
-               console.log(msg);
-               if(cuserid=receiverid){
-               $scope.chatlist.push(msg)
-           }
-           $scope.cuserid=cuserid;
-           });
-       
-
-
-
 
 
 

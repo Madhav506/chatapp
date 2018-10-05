@@ -38,7 +38,7 @@ exports.chatAddHistory = function (userid, username, message, dateTime) {
         console.log(sendername);
         console.log(receiverid);
         console.log(receivername);
-        console.log(message)
+        console.log(message);
         
         var peermod = require('../model/peerSchema');
         var response={};

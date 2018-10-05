@@ -48,20 +48,31 @@ io.on('connection', function(client){
 
   
         client.on('chatRoomBackend', function(data) {
+var num=0;
+            for(key in data){
+                num++;
+            }
                
-        users.chatAddHistory(data.userid, data.username, data.message, data.dateTime);
+            if (num==4) {
+                users.chatAddHistory(data.userid, data.username, data.message, data.dateTime);
         
         io.emit('chatroomClient', data);
+                
+            }
+
+            else{
+
+                console.log(data);
+                
+
+                users.peerchatHistory(data.senderid,data.sendername,data.receiverid,data.receivername,data.message,data.dateTime);
+        
+        io.emit('chatroomClient',data);
+            }
+        
         //client.broadcast.emit('chatroomClient', data);
     })
 
-
-
-    client.on('peerchatbackend',function(data){
-        console.log("in")
-        users.peerchatHistory(data.senderid,data.sendername,data.receiverid,data.receivername,data.dateTime);
-        io.emit(data.receiverid,data);
-    })
 
 });
 
